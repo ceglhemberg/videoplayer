@@ -1,0 +1,7 @@
+.loading {
+  text-align: center;
+}
+
+.loading__loader {
+  height: 64px;
+}

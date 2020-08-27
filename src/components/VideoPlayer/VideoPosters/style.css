@@ -1,0 +1,12 @@
+.video-posters {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+  .video-posters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

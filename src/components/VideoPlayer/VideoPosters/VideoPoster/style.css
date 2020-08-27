@@ -1,0 +1,8 @@
+.video-poster__image {
+  width: 100%;
+}
+
+.video-poster__name {
+  margin: 8px 0;
+  text-align: center;
+}
