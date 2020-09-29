@@ -26,7 +26,7 @@ const VideoPlayer = ({ data }) => {
         id={currentVideo.id}
         video={currentVideo.video} 
       />
-    )
+    );
   }
 
   return (

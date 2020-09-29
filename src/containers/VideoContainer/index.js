@@ -29,33 +29,34 @@ const VideoContainer = () => {
     fetchData();
   }, []);
 
-  // Handle data
-  let content;
-  if (data && data.length) {
-    content = <VideoPlayer data={data} />;
-  } else if (data) {
-    content = (
-      <Error
-        title='No data yet!'
-        text='Add some data to the backend before viewing this page'
-      />
-    );
-  } else if (dataError) {
-    content = (
-      <Error
-        title={dataError}
-        text='An error occurred while fetching the data'
-        highlight
-      />
-    )
-  } else {
-    content = <Loading />;
-  }
+  // Handle render content
+  const handleRender = (data, error) => {
+    if (data && data.length) {
+      return <VideoPlayer data={data} />;
+    } else if (data) {
+      return (
+        <Error
+          title='No data yet!'
+          text='Add some data to the backend before viewing this page'
+        />
+      );
+    } else if (error) {
+      return (
+        <Error
+          title={error}
+          text='An error occurred while fetching the data'
+          highlight
+        />
+      );
+    } else {
+      return <Loading />;
+    }
+  }; 
 
   return (
     <div className='content'>
       <Wrapper>
-        {content}
+        {handleRender(data, dataError)}
       </Wrapper>
     </div>
   );

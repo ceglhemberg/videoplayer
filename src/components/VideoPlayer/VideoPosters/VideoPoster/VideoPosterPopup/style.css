@@ -1,0 +1,14 @@
+.video-poster-popup {
+  position: absolute;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  padding: 16px;
+  border-radius: 8px;
+  top: 0;
+  left: 0;
+}
+
+.video-poster-popup--hidden {
+  display: none;
+}

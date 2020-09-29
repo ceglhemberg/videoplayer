@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './style.css';
 
-const VideoPoster = ({ poster, select, mousePosition }) => {
+import VideoPosterPopup from './VideoPosterPopup';
+
+const VideoPoster = ({ poster, select }) => {
 
   // State
   const [showInfo, setShowInfo] = useState(false);
@@ -13,23 +15,6 @@ const VideoPoster = ({ poster, select, mousePosition }) => {
   const show = () => setShowInfo(true);
   const hide = () => setShowInfo(false);
 
-  // Description
-  let description;
-  if (showInfo) {
-    description = (
-      <div
-        className='video-poster__popup'
-        style={{
-          transform: `translate3d(${mousePosition.x}px,${mousePosition.y}px, 0px)`
-        }}
-      >
-        <p className='video-poster__description'>
-          {poster.description}
-        </p>
-      </div>
-    );
-  }
-
   return (
     <div
       className='video-poster' 
@@ -39,13 +24,13 @@ const VideoPoster = ({ poster, select, mousePosition }) => {
     >
       <img 
         className='video-poster__image' 
-        src={poster.image} 
-        alt={poster.name} 
+        src={poster.image}
+        alt={poster.name}
       />
       <h4 className='video-poster__name'>
         {poster.name}
       </h4>
-      {description}
+      {showInfo && <VideoPosterPopup text={poster.description} />}
     </div>
   );
 }

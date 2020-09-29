@@ -10,20 +10,3 @@
   margin: 8px 0;
   text-align: center;
 }
-
-.video-poster__popup {
-  position: absolute;
-  max-width: 500px;
-  background: rgba(255, 255, 255, 0.8);
-  z-index: 1;
-  padding: 16px;
-  border-radius: 8px;
-  top: 0;
-  left: 0;
-}
-
-@media only screen and (max-width: 600px) {
-  .video-poster__popup {
-
-  }
-}
